@@ -1,6 +1,6 @@
 package com.jo.clean_skin_service.controller;
 
-import com.jo.clean_skin_service.entity.Advice;
+import com.jo.clean_skin_service.dto.AdviceDto;
 import com.jo.clean_skin_service.service.AdviceService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +20,8 @@ public class AdviceController {
     }
 
     @GetMapping
-    public ResponseEntity<Advice> getAdvice(@RequestParam String disease) {
-        Advice advice = service.getAdvice(disease);
+    public ResponseEntity<AdviceDto> getAdvice(@RequestParam String disease) {
+        AdviceDto advice = service.getAdvices(disease);
         return new ResponseEntity<>(advice, HttpStatus.OK);
     }
 }

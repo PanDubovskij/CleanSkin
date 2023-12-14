@@ -1,7 +1,7 @@
 package com.jo.clean_skin_service.service;
 
-import com.jo.clean_skin_service.entity.Advice;
+import com.jo.clean_skin_service.dto.AdviceDto;
 
 public interface AdviceService {
-    Advice getAdvice(String disease);
+    AdviceDto getAdvices(String disease);
 }
