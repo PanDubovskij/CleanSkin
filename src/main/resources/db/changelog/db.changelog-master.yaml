@@ -1,0 +1,26 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: createTaskTable
+      author: jan
+      changes:
+#        - sql: CREATE TYPE status AS ENUM ('IN_PROGRESS', 'DONE', 'FAILED');
+        - createTable:
+            tableName: advice
+            columns:
+              - column:
+                  name: advice_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: advice_pk
+              - column:
+                  name: disease_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: advice_body
+                  type: varchar(255)
